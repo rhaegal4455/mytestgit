@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from peewee import *
 import logging
-
+import time
 from .model import Model, JsonField
+
 
 LOGGER = logging.getLogger()
 
@@ -31,3 +32,7 @@ class App(Model):
         values.setdefault('create_time', cls.now())
         with cls.db.transaction():
             return cls.create(**values)
+        
+        
+print("123")
+
